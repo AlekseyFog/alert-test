@@ -90,7 +90,7 @@
     </div>
     <div class="catalog__main row">
       <div
-        v-for="(item, index) in flatCatalog"
+        v-for="(item, index) in FLAT_CATALOG"
         :key="index"
         class="col-12 col-md-6 col-lg-4 col-xl-3 mb-md-4 d-flex"
       >
@@ -105,7 +105,7 @@
 <script>
 import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/default.css';
-import FLAT_CATALOG from '../store/data';
+import { mapActions, mapGetters } from 'vuex';
 import CatalogItem from './CatalogItem';
 
 export default {
@@ -119,8 +119,20 @@ export default {
     valueStairs: [1, 25],
     valueMeters: [9, 999],
     valueCost: [99.9, 999.9],
-    flatCatalog: FLAT_CATALOG,
   }),
+  computed: {
+    ...mapGetters([
+      'FLAT_CATALOG',
+    ]),
+  },
+  mounted() {
+    this.GET_FLATS_FROM_JSON();
+  },
+  methods: {
+    ...mapActions([
+      'GET_FLATS_FROM_JSON',
+    ]),
+  },
 };
 </script>
 
