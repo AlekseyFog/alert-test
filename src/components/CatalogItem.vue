@@ -81,6 +81,7 @@ export default {
   background: #FFFFFF;
   box-shadow: 0 5px 20px rgba(86, 86, 86, 0.05);
   border-radius: 10px;
+  cursor: url('../assets/cursor.png'), auto;
 }
 
 .catalog-item__head {

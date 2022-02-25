@@ -23,7 +23,6 @@ export default new Vuex.Store({
           return flat_catalog;
         })
         .catch((error) => {
-          console.log(error);
           return error;
         });
     },
